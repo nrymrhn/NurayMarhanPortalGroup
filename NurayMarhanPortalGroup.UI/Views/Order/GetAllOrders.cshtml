@@ -1,0 +1,58 @@
+﻿@model IEnumerable<NurayMarhanPortalGroup.Entities.Entities.Order>
+
+@{
+    ViewData["Title"] = "GetAllOrders";
+}
+
+<h4>Tüm Siparişler</h4>
+<hr />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+               Toplam Fiyat
+            </th>
+            <th>
+               Adres Kodu
+            </th>
+            <th>
+               Müşteri Kodu
+            </th>
+          
+            <th>
+               Durum
+            </th>
+            <th>
+               Eklenme Tarihi
+            </th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "UpdateOrder", new { id = item.ID }) |
+                @Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-info m-1" asp-controller="Order" asp-action="Index">Sipariş Ekle</a>

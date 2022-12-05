@@ -1,0 +1,73 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Customer
+
+@{
+    ViewData["Title"] = "UpdateCustomer";
+}
+
+
+
+<h4>Müşteri Güncelle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateCustomer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">Adı</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Soyadı</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TCID" class="control-label">TC No</label>
+                <input asp-for="TCID" class="form-control" />
+                <span asp-validation-for="TCID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label">Doğum Tarihi</label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gsm" class="control-label">Telefon</label>
+                <input asp-for="Gsm" class="form-control" type="tel" maxlength="10"  placeholder="5555555555" />
+                <span asp-validation-for="Gsm" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Status" />Durum
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label">Eklenme Tarihi</label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input type="hidden" asp-for="ID" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-warning" />
+                <a class="btn btn-info" asp-action="GetAllCustomers">Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

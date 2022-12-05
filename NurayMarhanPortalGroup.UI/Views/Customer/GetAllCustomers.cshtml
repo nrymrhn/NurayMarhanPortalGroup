@@ -1,0 +1,76 @@
+﻿@model IEnumerable<NurayMarhanPortalGroup.Entities.Entities.Customer>
+
+@{
+    ViewData["Title"] = "GetAllCustomers";
+}
+
+<h4>Tüm Müşteriler</h4>
+<hr />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Adı
+            </th>
+            <th>
+               Soyadı
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                TC No
+            </th>
+            <th>
+                Doğum Tarihi
+            </th>
+            <th>
+                Telefon
+            </th>
+          
+            <th>
+                Durumu
+            </th>
+            <th>
+                Eklenme Tarihi
+            </th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TCID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gsm)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "UpdateCustomer", new { id = item.ID }) |
+                @Html.ActionLink("Sil", "DeleteCustomer", new { id = item.ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-info m-1" asp-controller="Customer" asp-action="Index">Müşteri Ekle</a>

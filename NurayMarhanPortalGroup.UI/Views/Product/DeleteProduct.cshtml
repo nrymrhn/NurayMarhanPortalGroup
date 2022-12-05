@@ -1,0 +1,68 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Product
+
+@{
+    ViewData["Title"] = "UpdateProduct";
+}
+
+
+
+<h4>Ürün Sil</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label">Ürün Adı</label>
+                <input disabled asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Ürün Açıklaması</label>
+                <input disabled asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldPrice" class="control-label">Eski Fiyat</label>
+                <input disabled asp-for="OldPrice" class="form-control" />
+                <span asp-validation-for="OldPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Fiyat</label>
+                <input disabled asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label">Kategori Kodu</label>
+                <input disabled asp-for="CategoryId" class="form-control" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input disabled class="form-check-input" asp-for="Status" /> Durum
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label">Eklenme Tarihi</label>
+                <input disabled asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input type="hidden" asp-for="ID" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Sil" class="btn btn-danger" />
+                <a class="btn btn-info" asp-action="GetAllProducts">Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

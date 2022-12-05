@@ -1,0 +1,62 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Order
+
+@{
+    ViewData["Title"] = "AddOrder";
+}
+
+
+
+<h4>Sipariş Ekle</h4>
+<hr />
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        @TempData["Message"]
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddOrder">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label">Toplam Fiyat</label>
+                <input asp-for="TotalPrice" min="0" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label">Adres</label>
+               <select class="form-control" asp-for="AddressId">
+                   <option>Lütfen Seçiniz</option>
+                   @foreach (Address item in ViewBag.Addresses)
+                   {
+                       <option value="@item.ID">@item.AddressLine</option>
+                   }
+               </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label">Müşteri</label>
+                <select class="form-control" asp-for="CustomerId">
+                    <option>Lütfen Seçiniz</option>
+                    @foreach (Customer item in ViewBag.Customers)
+                    {
+                        <option value="@item.ID">@item.FirstName @item.LastName </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-warning" />
+                <a class="btn btn-info" asp-action="GetAllOrders">Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

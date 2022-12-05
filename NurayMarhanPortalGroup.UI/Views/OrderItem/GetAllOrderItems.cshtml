@@ -1,0 +1,64 @@
+﻿@model IEnumerable<NurayMarhanPortalGroup.Entities.Entities.OrderItem>
+
+@{
+    ViewData["Title"] = "GetAllOrderItems";
+}
+
+<h4>Tüm Sipariş Elemanları</h4>
+<hr />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+               Birim Fiyat
+            </th>
+            <th>
+                Miktar
+            </th>
+            <th>
+              Ürün Kodu
+            </th>
+            <th>
+                Sipariş Kodu
+            </th>
+         
+            <th>
+               Durum
+            </th>
+            <th>
+               Eklenme Tarihi
+            </th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "UpdateOrderItem", new { id = item.ID }) |
+                @Html.ActionLink("Sil", "DeleteOrderItem", new { id = item.ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-info m-1" asp-controller="OrderItem" asp-action="Index">Sipariş Elemanı Ekle</a>

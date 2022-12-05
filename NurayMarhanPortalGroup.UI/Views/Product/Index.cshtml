@@ -1,0 +1,72 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Product
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h4>Ürün Ekle</h4>
+<hr />
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        @TempData["Message"]
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label">Ürün Adı</label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Ürün Açıklaması</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldPrice" class="control-label">Eski Fiyat</label>
+                <input asp-for="OldPrice" min="0" class="form-control" />
+                <span asp-validation-for="OldPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Fiyat</label>
+                <input asp-for="Price" min="0" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label">Kategori</label>
+                <select class="form-control" asp-for="CategoryId">
+                    <option>Lütfen Seçiniz</option>
+                    @foreach (Category item in ViewBag.Categories)
+                    {
+                        <option value="@item.ID">@item.CategoryName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+             
+                <input type="hidden" asp-for="ID" class="form-control" />
+              
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-warning" />
+                <a class="btn btn-info" asp-action="GetAllProducts">Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

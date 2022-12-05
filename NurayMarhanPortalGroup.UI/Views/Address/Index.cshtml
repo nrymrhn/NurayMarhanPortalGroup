@@ -1,0 +1,88 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Address
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<h4>Adres Ekle</h4>
+<hr />
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        @TempData["Message"]
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddAddress">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AddressLine" class="control-label">Adres Satırı</label>
+                <input asp-for="AddressLine" class="form-control" />
+                <span asp-validation-for="AddressLine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label">Ülke</label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label">Şehir</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="District" class="control-label">Semt</label>
+                <input asp-for="District" class="form-control" />
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZipCode" class="control-label">Posta Kodu</label>
+                <input asp-for="ZipCode" min="0" class="form-control" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label">Müşteri</label>
+                <select class="form-control" asp-for="CustomerId">
+                    <option>Lütfen Seçiniz</option>
+                    @foreach (Customer item in ViewBag.Customers)
+                    {
+                        <option value="@item.ID">@item.FirstName @item.LastName </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+               
+                <input type="hidden" asp-for="ID" class="form-control" />
+                
+            </div>
+            @*<div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>*@
+        <div class="form-group">
+            <input type="submit" value="Kaydet" class="btn btn-warning" />
+            <a class="btn btn-info" asp-action="GetAllAddress">Geri Dön</a>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

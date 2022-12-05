@@ -1,0 +1,68 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Address
+
+@{
+    ViewData["Title"] = "DeleteAddress";
+}
+
+
+
+<h4>Adres Sil</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteAddress">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AddressLine" class="control-label">Adres Satırı</label>
+                <input disabled asp-for="AddressLine" class="form-control" />
+                <span asp-validation-for="AddressLine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label">Ülke</label>
+                <input disabled asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label">Şehir</label>
+                <input disabled asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="District" class="control-label">Semt</label>
+                <input disabled asp-for="District" class="form-control" />
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZipCode" class="control-label">Posta Kodu</label>
+                <input disabled asp-for="ZipCode" class="form-control" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label">Müşteri Kodu</label>
+                <input disabled asp-for="CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+
+                    <input disabled class="form-check-input" asp-for="Status" /> Durum 
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label">Eklenme Tarihi</label>
+                <input disabled asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sil" class="btn btn-danger" />
+                <a class="btn btn-warning" asp-action="GetAllAddress">Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

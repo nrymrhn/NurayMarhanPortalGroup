@@ -1,0 +1,70 @@
+﻿@model IEnumerable<NurayMarhanPortalGroup.Entities.Entities.Product>
+
+@{
+    ViewData["Title"] = "GetAllProducts";
+}
+
+<h4>Tüm Ürünler</h4>
+<hr />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Ürün Adı
+            </th>
+            <th>
+                Ürün Açıklaması
+            </th>
+            <th>
+                Eski Fiyat
+            </th>
+            <th>
+               Fiyat
+            </th>
+            <th>
+                Kategori Kodu
+            </th>
+         
+            <th>
+                Durum
+            </th>
+            <th>
+                Eklenme Tarihi
+            </th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "UpdateProduct", new { id=item.ID }) |               
+                @Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-info m-1" asp-controller="Product" asp-action="Index">Ürün Ekle</a>

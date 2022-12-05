@@ -1,0 +1,59 @@
+﻿@model NurayMarhanPortalGroup.Entities.Entities.Order
+
+@{
+    ViewData["Title"] = "DeleteOrder";
+}
+
+
+
+<h4>Sipariş Sil</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteOrder">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label">Toplam Fiyat
+                </label>
+                <input disabled asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label">Adres Kodu</label>
+                <input disabled asp-for="AddressId" class="form-control" />
+                <span asp-validation-for="AddressId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label">Müşteri Kodu</label>
+                <input disabled asp-for="CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input disabled class="form-check-input" asp-for="Status" /> Durum
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label">Eklenme Tarihi</label>
+                <input disabled asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input type="hidden" asp-for="ID" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Sil" class="btn btn-danger" />
+                <a class="btn btn-info" asp-action="GetAllOrders">Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

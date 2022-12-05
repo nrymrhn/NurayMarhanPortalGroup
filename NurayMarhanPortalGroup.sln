@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurayMarhanPortalGroup.Entities", "NurayMarhanPortalGroup.Entities\NurayMarhanPortalGroup.Entities.csproj", "{B2E1C861-64AB-45FA-BC70-BD0DAA6CE48C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurayMarhanPortalGroup.Business", "NurayMarhanPortalGroup.Business\NurayMarhanPortalGroup.Business.csproj", "{7E3A0D5D-AAE5-4242-B5CD-2010628CB237}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurayMarhanPortalGroup.Repository", "NurayMarhanPortalGroup.Repository\NurayMarhanPortalGroup.Repository.csproj", "{1E54F3D9-3ECE-43CC-B51C-71EAED954F17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurayMarhanPortalGroup.UI", "NurayMarhanPortalGroup.UI\NurayMarhanPortalGroup.UI.csproj", "{330D7033-766C-4863-AED4-94842C4C72C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurayMarhanPortalGroup.API", "NurayMarhanPortalGroup.API\NurayMarhanPortalGroup.API.csproj", "{BC8443FF-6C73-4898-B5E3-42D79612A71F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2E1C861-64AB-45FA-BC70-BD0DAA6CE48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E1C861-64AB-45FA-BC70-BD0DAA6CE48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E1C861-64AB-45FA-BC70-BD0DAA6CE48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E1C861-64AB-45FA-BC70-BD0DAA6CE48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E3A0D5D-AAE5-4242-B5CD-2010628CB237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3A0D5D-AAE5-4242-B5CD-2010628CB237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3A0D5D-AAE5-4242-B5CD-2010628CB237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3A0D5D-AAE5-4242-B5CD-2010628CB237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E54F3D9-3ECE-43CC-B51C-71EAED954F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E54F3D9-3ECE-43CC-B51C-71EAED954F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E54F3D9-3ECE-43CC-B51C-71EAED954F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E54F3D9-3ECE-43CC-B51C-71EAED954F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{330D7033-766C-4863-AED4-94842C4C72C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330D7033-766C-4863-AED4-94842C4C72C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330D7033-766C-4863-AED4-94842C4C72C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330D7033-766C-4863-AED4-94842C4C72C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8443FF-6C73-4898-B5E3-42D79612A71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8443FF-6C73-4898-B5E3-42D79612A71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8443FF-6C73-4898-B5E3-42D79612A71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8443FF-6C73-4898-B5E3-42D79612A71F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D47037D-4057-44EE-AD10-5519CEC7E66B}
+	EndGlobalSection
+EndGlobal
